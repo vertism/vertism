@@ -1,0 +1,54 @@
+body {
+	margin:0;
+	padding:0;
+	font-family: 'Francois One', sans-serif;
+}
+
+@mixin bar ($colour, $border-width, $direction:left) {
+	position:relative;
+	background:$colour;
+	#{$direction}:$border-width;
+	padding-left:$border-width + 5;
+	
+	$pseudo:before;
+	$oppdirection:right;
+	
+	@if $direction != left {
+		$pseudo:after;
+		$oppdirection:left;
+	}
+	
+	&:#{$pseudo} {
+		position:absolute;
+		content:"";
+		height:0;
+		width:0;
+		border-top:$border-width solid transparent;
+		border-bottom:$border-width solid transparent;
+		border-#{$oppdirection}:$border-width solid $colour;
+		#{$direction}:-$border-width;
+		top:0px;
+	}
+}
+
+.stripe {
+	height:100px;
+	padding:5px;
+	
+	$colour1:#8BAD3A;
+	$colour2:#286472;
+	$colour3:#B8413D;
+	$colour4:#791714;
+	
+	$border-width:55px;
+		
+	&#contact {
+		@include bar($colour1, $border-width, left)
+	}
+	&#recent {
+		@include bar($colour2, $border-width, right)
+	}
+	&#links {
+		@include bar($colour3, $border-width, left)
+	}
+}
