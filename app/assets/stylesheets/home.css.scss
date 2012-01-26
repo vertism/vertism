@@ -2,14 +2,22 @@ body {
 	margin:0;
 	padding:0;
 	font-family: 'Francois One', sans-serif;
+	font-size:20px;
+	line-height:33px;
+}
+
+a, a:hover {
+	background:white;
+	text-decoration:none;
+	color:black;
+}
+
+.email {
+	unicode-bidi:bidi-override;
+	direction:rtl;
 }
 
 @mixin bar ($colour, $border-width, $direction:left) {
-	position:relative;
-	background:$colour;
-	#{$direction}:$border-width;
-	padding-left:$border-width + 5;
-	
 	$pseudo:before;
 	$oppdirection:right;
 	
@@ -17,6 +25,11 @@ body {
 		$pseudo:after;
 		$oppdirection:left;
 	}
+	
+	position:relative;
+	background:$colour;
+	#{$direction}:$border-width * 2;
+	padding-#{$oppdirection}:($border-width * 2) + 5;
 	
 	&:#{$pseudo} {
 		position:absolute;
@@ -43,12 +56,12 @@ body {
 	$border-width:55px;
 		
 	&#contact {
-		@include bar($colour1, $border-width, left)
+		@include bar($colour1, $border-width, right)
 	}
 	&#recent {
-		@include bar($colour2, $border-width, right)
+		@include bar($colour2, $border-width, left)
 	}
 	&#links {
-		@include bar($colour3, $border-width, left)
+		@include bar($colour3, $border-width, right)
 	}
 }
