@@ -1,19 +1,33 @@
-<div class="stripe" id="contact">
-	Andrew Pepler
-	<br />
-	<span class="email"><%= "andrew@vertism.com".reverse %></span>
-	<br />
-	@vertism
-</div>
+<div>
+	<div class="stripe contact">
+		<div>
+			<span>Andrew Pepler</span>
+		</div>
+		<div class="email">
+			<span><%= "andrew@vertism.com".reverse %></span>
+		</div>
+		<div>
+			<span>@vertism</span>
+		</div>
+	</div>
 
-<div class="stripe" id="recent">
-	<%= @summary %>
-	<br />
-	<%= @lastTrack %>
-</div>
+	<div class="stripe recent">
+		<div>
+			<span><%= @summary %></span>
+		</div>
+		<div>
+			<span><%= @lastTrack %></span>
+		</div>
+	</div>
 
-<div class="stripe" id="links">
-  <a href="http://OfTheWeek.info">Of The Week</a>
-  <br />
-  <a href="http://github.com/vertism">GitHub</a>
+	<div class="stripe links">
+		<div>
+	  		<span><a href="http://OfTheWeek.info">Of The Week</a></span>
+		</div>
+		<div>
+	  		<span><a href="http://github.com/vertism">GitHub</a></span>
+		</div>
+	</div>
+
+	<div class="stripe more"></div>
 </div>

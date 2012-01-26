@@ -9,7 +9,12 @@ body {
 a, a:hover {
 	background:white;
 	text-decoration:none;
-	color:black;
+	color:blue;
+}
+
+span {
+	background:white;
+	padding:0 3px;
 }
 
 .email {
@@ -26,10 +31,10 @@ a, a:hover {
 		$oppdirection:left;
 	}
 	
+	text-align:$direction;
 	position:relative;
 	background:$colour;
-	#{$direction}:$border-width * 2;
-	padding-#{$oppdirection}:($border-width * 2) + 5;
+	margin-#{$direction}:$border-width * 2;
 	
 	&:#{$pseudo} {
 		position:absolute;
@@ -48,20 +53,23 @@ a, a:hover {
 	height:100px;
 	padding:5px;
 	
-	$colour1:#8BAD3A;
-	$colour2:#286472;
-	$colour3:#B8413D;
-	$colour4:#791714;
+	$colour1:#2D3793;
+	$colour2:#99B02D;
+	$colour3:#C3042F;
+	$colour4:#002C45;
 	
 	$border-width:55px;
 		
-	&#contact {
+	&.contact {
 		@include bar($colour1, $border-width, right)
 	}
-	&#recent {
+	&.recent {
 		@include bar($colour2, $border-width, left)
 	}
-	&#links {
+	&.links {
 		@include bar($colour3, $border-width, right)
+	}
+	&.more {
+		@include bar($colour4, $border-width, left)
 	}
 }
