@@ -14,6 +14,8 @@ end
 
 gem 'jawbone'
 gem 'lastfm'
+gem 'twitter'
+
 gem 'thin'
 
 # Gems used only for assets and not required

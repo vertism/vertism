@@ -12,5 +12,7 @@ class HomeController < ApplicationController
     lastfm = Lastfm.new(last_api, last_secret)
     tracks = lastfm.user.get_recent_tracks "pepler"
     @lastTrack = "The last song I listened to was " + tracks.first["name"] + " by " + tracks.first["artist"]["content"]
+    
+    @tweet = Twitter.user_timeline("vertism").first.text
   end
 end
