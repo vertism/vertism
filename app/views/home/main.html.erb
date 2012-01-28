@@ -18,9 +18,6 @@
 		<div>
 			<span><%= @lastTrack %></span>
 		</div>
-		<div>
-		  <span><%= @tweet %></span>
-		</div>
 	</div>
 
 	<div class="stripe links">
@@ -32,5 +29,10 @@
 		</div>
 	</div>
 
-	<div class="stripe more"></div>
+	<div class="stripe more">
+	  <span>My last tweets were</span>
+	  <% @tweets.each do |tweet| %>
+	      <span><%= tweet %></span>
+	  <% end %>
+	</div>
 </div>
