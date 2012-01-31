@@ -17,11 +17,6 @@ span {
 	padding:0 3px;
 }
 
-.email {
-	unicode-bidi:bidi-override;
-	direction:rtl;
-}
-
 @mixin bar ($colour, $border-width, $direction:left) {
 	$pseudo:before;
 	$oppdirection:right;
