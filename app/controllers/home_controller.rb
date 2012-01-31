@@ -13,6 +13,10 @@ class HomeController < ApplicationController
     tracks = lastfm.user.get_recent_tracks "pepler"
     @lastTrack = "The last song I listened to was " + tracks.first["name"] + " by " + tracks.first["artist"]["content"]
     
-    @tweets = Twitter.user_timeline("vertism").collect!{|x| x.text}.slice!(0,3)
+    begin
+      @tweets = Twitter.user_timeline("vertism").collect!{|x| x.text}.slice!(0,3)
+    rescue
+      @tweets = nil
+    end
   end
 end
