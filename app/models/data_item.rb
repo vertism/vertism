@@ -18,7 +18,7 @@ class DataItem < ActiveRecord::Base
   
   def update_tweets
     Twitter.user_timeline("vertism").slice!(0,3).each do |tweet|
-      Tweet.create(:message_id => tweet.id, :text => tweet.text)
+      Tweet.create(:message_id => tweet.id_str, :text => tweet.text)
     end
   end
   
