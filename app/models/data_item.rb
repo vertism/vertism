@@ -17,7 +17,7 @@ class DataItem < ActiveRecord::Base
   end
   
   def update_tweets
-    Twitter.user_timeline("vertism").slice!(0,3).each do |tweet|
+    Twitter.user_timeline("vertism").slice!(0,3).reverse!.each do |tweet|
       Tweet.create(:message_id => tweet.id.to_s, :text => tweet.text)
     end
   end
@@ -33,7 +33,11 @@ class DataItem < ActiveRecord::Base
     end
     
     if update == true
-      eval("data_item.update_#{name}")
+      begin
+        eval("data_item.update_#{name}")
+      rescue
+        return ""
+      end
       data_item.save!
     end
     
