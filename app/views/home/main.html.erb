@@ -16,12 +16,16 @@
 	</div>
 
 	<div class="stripe recent">
-		<div>
-			<span><%= @up %></span>
-		</div>
-		<div>
-			<span><%= @music %></span>
-		</div>
+	  <% if !@up.empty? %>
+		  <div>
+			  <span><%= @up %></span>
+		    </div>
+		<% end %>
+		<% if !@music.empty? %>
+		  <div>
+			  <span><%= @music %></span>
+		  </div>
+		<% end %>
 	</div>
 
 	<div class="stripe links">
