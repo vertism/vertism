@@ -34,8 +34,9 @@ class DataItem < ActiveRecord::Base
     
     if update == true
       begin
-        eval("data_item.update_#{name}")
+        data_item.send("update_#{name}")
       rescue
+        puts "update_" + name + " failed"
         return ""
       end
       data_item.save!
