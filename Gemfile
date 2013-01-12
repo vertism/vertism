@@ -14,7 +14,7 @@ end
 
 gem 'jawbone'
 gem 'lastfm'
-gem 't'
+gem 'twitter'
 
 gem 'thin'
 
