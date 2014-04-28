@@ -16,3 +16,5 @@
 
 # Ignore environment variables
 /config/heroku_env.rb
+
+config/database.yml
