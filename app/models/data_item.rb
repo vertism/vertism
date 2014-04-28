@@ -1,13 +1,5 @@
 class DataItem < ActiveRecord::Base
   
-  def update_up
-    up_token = ENV['UP_TOKEN']
-    up = Jawbone::Session.new_from_token up_token
-    yesterday = Date.today - 1
-    summary = Jawbone::DailySummary.new(up.daily_summary yesterday)
-    self.description = "Yesterday I " + summary.data["sleep_summary"]["sleeps"].first["title"].downcase! + " and walked " + summary.kilometers.to_s + " km"
-  end
-  
   def update_music
     last_api = ENV['LASTFM_API']
     last_secret = ENV['LASTFM_SECRET']
