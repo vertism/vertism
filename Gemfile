@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.17'
 
 group :production do
   gem 'pg'
@@ -10,7 +10,7 @@ group :development, :test do
 end
 
 gem 'lastfm'
-gem 'twitter'
+gem 'twitter', '~> 5.0'
 
 gem 'thin'
 
