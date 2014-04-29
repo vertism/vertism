@@ -6,7 +6,7 @@ class Tweet < ActiveRecord::Base
     def update
       if Tweet.all.none? || Tweet.last.updated_at < 15.minutes.ago
         client.user_timeline("vertism").slice!(0,3).reverse!.each do |tweet|
-          Tweet.create(:message_id => tweet.id.to_s, :text => tweet.text)
+          Tweet.create(:message_id => tweet.id.to_s, :text => tweet.text, :url => tweet.url.to_s)
         end
       end
     end

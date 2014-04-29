@@ -17,6 +17,10 @@ span {
 	padding:0 3px;
 }
 
+span.tweet a {
+  color: black;
+}
+
 @mixin bar ($colour, $border-width, $direction:left) {
 	$pseudo:before;
 	$oppdirection:right;

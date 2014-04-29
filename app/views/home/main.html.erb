@@ -33,14 +33,14 @@
 	  		<span><a href="http://github.com/vertism">GitHub</a></span>
 		</div>
 		<div>
-	  		<span><a href="http://www.linkedin.com/pub/andrew-pepler/22/1a/ab4">Linked In</a></span>
+	  		<span><a href="http://www.linkedin.com/pub/andrew-pepler/22/1a/ab4">LinkedIn</a></span>
 		</div>
 	</div>
 
 	<div class="stripe more">
 	  <span>My last tweets were</span>
 	  <% @tweets.each do |tweet| %>
-	      <span><%= tweet %></span>
+	      <span class="tweet"><%= link_to tweet.text, tweet.url %></span>
 	  <% end %>
 	</div>
 </div>
