@@ -28,7 +28,7 @@ module Runkeeper
       
       case days
       when 0
-        'today'
+        'Today'
       when '1'
         '1 day ago'
       else
