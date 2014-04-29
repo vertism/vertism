@@ -9,7 +9,7 @@ module Runkeeper
     end
     
     def to_s
-      "I last ran #{days_ago} for #{distance_in_miles}"
+      "#{days_ago} I ran #{distance_in_miles}"
     end
     
     private
