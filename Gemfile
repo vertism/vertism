@@ -9,9 +9,12 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+gem 'rest_client'
 gem 'lastfm'
 gem 'twitter', '~> 5.0'
 
+gem 'better_errors'
+gem 'binding_of_caller'
 gem 'thin'
 
 # Gems used only for assets and not required

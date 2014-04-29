@@ -16,6 +16,11 @@
 	</div>
 
 	<div class="stripe recent">
+		<% if !@run.empty? %>
+		  <div>
+			  <span><%= @run %></span>
+		  </div>
+		<% end %>
 		<% if !@music.empty? %>
 		  <div>
 			  <span><%= @music %></span>
